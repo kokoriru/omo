@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
-  scope module: :master do
+
+  namespace :master do
     resources :products
     resources :categories
   end
