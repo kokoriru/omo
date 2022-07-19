@@ -29,9 +29,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_01_154229) do
 
   create_table "products", force: :cascade do |t|
     t.string "manufacturer"
+    t.integer "status", default: 0, null: false
     t.string "name"
     t.boolean "high_priority", default: true, null: false
-    t.integer "status", default: 0, null: false
     t.datetime "started_at"
     t.datetime "ended_at"
     t.datetime "release_at"
