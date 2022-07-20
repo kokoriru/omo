@@ -1,5 +1,5 @@
 class Master::ProductsController < ActionController::Base
-  before_action :set_product, only: %i[show edit destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all.order(created_at: :desc)
