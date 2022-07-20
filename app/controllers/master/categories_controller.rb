@@ -1,5 +1,5 @@
 class Master::CategoriesController < ActionController::Base
-  before_action :set_category, only: %i[show edit destroy]
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all.order(created_at: :desc)
