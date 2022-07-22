@@ -1,1 +1,52 @@
 <h1>products#form</h1>
+
+<%= form_with model: [:master, @product], local: true do |f| %>
+  <p>
+    <%= f.label :high_priority %>
+    <%= f.check_box :high_priority, default: true %>
+  </p>
+
+  <p>
+    <%= f.label :status %>
+    <%= f.select :status, Product.statuses.keys, { selected: @product.status } %>
+  </p>
+
+  <p>
+    <%= f.label :manufacturer %>
+    <%= f.text_field :manufacturer %>
+  </p>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :started_at %>
+    <%= f.text_field :started_at %>
+  </p>
+
+  <p>
+    <%= f.label :ended_at %>
+    <%= f.text_field :ended_at %>
+  </p>
+
+  <p>
+    <%= f.label :release_at %>
+    <%= f.text_field :release_at %>
+  </p>
+
+  <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
+  </p>
+
+  <p>
+    <%= f.submit '登録' %>
+  </p>
+<% end %>
