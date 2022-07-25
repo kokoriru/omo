@@ -3,6 +3,11 @@
 <%= form_with model: [:master, @product], local: true do |f| %>
   <%= error_messages_for @product %>
 
+  <% Category.all.each do |category| %>
+    <%= f.check_box :category_ids, { multiple: true, include_hidden: false, selected: @product.categories.map(&:id) }, category.id %>
+    <%= f.label "category_ids_#{category.id}", category.name %>
+  <% end %>
+
   <p>
     <%= f.label :high_priority %>
     <%= f.check_box :high_priority, default: true %>
