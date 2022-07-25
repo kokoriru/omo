@@ -43,7 +43,7 @@ class Master::ProductsController < ActionController::Base
 
   def product_params
     params.required(:product).permit(
-      :manufacturer, :name, :high_priority, :status, :started_at, :ended_at, :release_at, :url, :note
+      :manufacturer, :status, :name, :high_priority, :started_at, :ended_at, :release_at, :url, :note, category_ids: []
     )
   end
 end
