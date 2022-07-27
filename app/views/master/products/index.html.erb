@@ -4,6 +4,7 @@
   <tr>
     <th>ID</th>
     <th>優先度高</th>
+    <th>カテゴリー</th>
     <th>ステータス</th>
     <th>メーカー</th>
     <th>名称</th>
@@ -18,6 +19,7 @@
     <tr>
       <td><%= product.id %></td>
       <td><%= product.high_priority ? '○' : '' %></td>
+      <td><%= product.categories.map(&:name).join(', ') %></td>
       <td><%= product.status %></td>
       <td><%= product.manufacturer %></td>
       <td><%= product.name %></td>
