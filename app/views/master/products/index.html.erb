@@ -2,10 +2,12 @@
 
 <table border=1>
   <tr>
+    <th>ID</th>
     <th>優先度高</th>
+    <th>カテゴリー</th>
+    <th>ステータス</th>
     <th>メーカー</th>
     <th>名称</th>
-    <th>ステータス</th>
     <th>開始日時</th>
     <th>終了日時</th>
     <th>発売日</th>
@@ -15,10 +17,12 @@
 
   <% @products.each do |product| %>
     <tr>
+      <td><%= product.id %></td>
       <td><%= product.high_priority ? '○' : '' %></td>
+      <td><%= product.categories.map(&:name).join(', ') %></td>
+      <td><%= product.status %></td>
       <td><%= product.manufacturer %></td>
       <td><%= product.name %></td>
-      <td><%= product.status %></td>
       <td><%= product.started_at %></td>
       <td><%= product.ended_at %></td>
       <td><%= product.release_at %></td>
@@ -27,3 +31,4 @@
     </tr>
   <% end %>
 </table>
+
