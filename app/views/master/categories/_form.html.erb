@@ -1,1 +1,19 @@
 <h1>categories#form</h1>
+
+<%= form_with model: [:master, @category], local: true do |f| %>
+  <%= error_messages_for @category %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :sequence %>
+    <%= f.number_field :sequence, step: 1, min: 1 %>
+  </p>
+
+  <p>
+    <%= f.submit '登録' %>
+  </p>
+<% end %>
