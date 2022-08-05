@@ -1,6 +1,8 @@
 <h1>categories#form</h1>
 
 <%= form_with model: [:master, @category], local: true do |f| %>
+  <%= error_messages_for @category %>
+
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
