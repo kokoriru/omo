@@ -1,1 +1,17 @@
 <h1>categories#index</h1>
+
+<table border=1>
+  <tr>
+    <th>ID</th>
+    <th>名称</th>
+    <th>並び</th>
+  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name %></td>
+      <td><%= category.sequence %></td>
+    </tr>
+  <% end %>
+</table>
